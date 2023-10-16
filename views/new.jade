@@ -1,0 +1,53 @@
+extends layout
+
+block content
+  .container
+    .card.new-card
+      .card-body
+      #issues-div.container.mt-3
+        form(action='/new', method='post')
+          .card.new-card
+            .card-body            
+              label(for='title') Title
+              input#email.form-control(type='text', placeholder='title', name='title')
+          .card.new-card
+            .card-body            
+              label(for='language') Programming Language
+              select.form-control.text-left.choices-multiple(multiple='', name='language')
+                option
+                option(value='angulare') Angular
+                option(value='asp') ASP.NET
+                option(value='cpp') C++
+                option(value='csharp') C#
+                option(value='java') Java
+                option(value='js') Java Script
+                option(value='sql') Ms SQL
+                option(value='mongo') MongoDB
+                option(value='node') NodeJS
+                option(value='py') Python
+                option(value='react') React
+                option(value='Vue') Vue
+              script.
+                new Choices(document.querySelector(".choices-multiple"));
+          .card.new-card
+            .card-body            
+              label(for='description') What are the details of your problem?
+              textarea#description.form-control(name='description', placeholder='Description')
+          button.btn.btn-primary.text-center.mt-5(type='submit') Submit
+      script.
+        $(document).ready(function() {
+          $('#description').summernote({
+              placeholder: 'Description',
+              height: 250,
+              minHeight: 250,
+              focus: true,
+              toolbar: [
+                ['style', ['style']],
+                ['font', ['bold', 'italic', 'underline', 'clear']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['color', ['style']]
+              ]
+          });
+        });
+        

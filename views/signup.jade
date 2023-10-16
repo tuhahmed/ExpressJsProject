@@ -1,0 +1,57 @@
+extends layout
+
+block content
+  .container
+    .card.new-card
+      .card-body
+        h5 #{error}
+        form(action='/signup', method='POST')
+          .form-floating.mb-3.mt-3
+            input#fname.form-control(type='text', placeholder='First Name', name='fname')
+            label(for='fname') First Name
+          .form-floating.mb-3.mt-3
+            input#lname.form-control(type='text', placeholder='Last Name', name='lname')
+            label(for='lname') Last Name
+          .form-floating.mb-3.mt-3
+            input#email.form-control(type='text', placeholder='Email', name='email')
+            label(for='email') Email
+          .form-floating.mb-3.mt-3
+            input#cemail.form-control(type='text', placeholder='Confrim Email', name='cemail')
+            label(for='cemail') Confirm Email
+          .form-floating.mb-3.mt-3
+            input#password.form-control(type='password', placeholder='Password', name='password')
+            label(for='password') Password
+          .form-floating.mb-3.mt-3
+            input#cpassword.form-control(type='password', placeholder='Confrim Password')
+            label(for='cpassword') Confirm Password
+          .form-floating.mb-3.mt-3
+            input#phone.form-control(type='text', placeholder='Phone', name='phone')
+            label(for='phone') Phone Number
+          .form-floating.mb-3.mt-3
+            input#address.form-control(type='text', placeholder='Address', name='address')
+            label(for='address') Address
+          .form-floating.mb-3.mt-3
+            input#profession.form-control(type='text', placeholder='Profession', name='profession')
+            label(for='profession') Profession         
+          .form-floating.mb-3.mt-3
+            input#website.form-control(type='text', placeholder='Website', name='website')
+            label(for='website') Website
+          .form-floating.mb-3.mt-3
+            input#linkedin.form-control(type='text', placeholder='LinkedIn', name='linkedin')
+            label(for='lname') LinkedIn
+          .form-floating.mb-3.mt-3
+            input#github.form-control(type='text', placeholder='Github', name='github')
+            label(for='fname') Github
+          .form-floating.mb-3.mt-3
+            input#facebook.form-control(type='text', placeholder='Facebook', name='facebook')
+            label(for='facebook') Facebook
+          .form-floating.mb-3.mt-3
+            input#instagram.form-control(type='text', placeholder='Instagram', name='instagram')
+            label(for='instagram') Instagram
+          .form-floating.mb-3.mt-3
+            input#twitter.form-control(type='text', placeholder='Twitter', name='twitter')
+            label(for='twitter') Twitter
+          .form-floating.mb-3.mt-3
+             input(type='submit',value='Sign Up',data-transition='fade', data-theme='c' , class='btn btn-success')
+           
+          

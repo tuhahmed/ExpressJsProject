@@ -1,0 +1,40 @@
+extends layout
+
+block content
+  .container
+    table#dt1.table.dt(style='width:100%')
+      thead
+        tr
+          th(width='100%')
+      tbody
+        each user in users
+          tr
+            td
+              .card
+                .card-body
+                  .row.text-center
+                    .col-md-1.mb-1
+                      img.rounded(src='/images/user.png', alt='Logo', style='width:50px;')
+                    .col-md-3.mb-1
+                      p= user.firstname+" "+user.lastname
+                    .col-md-2.mb-1
+                      p= user.profession
+                    .col-md-2.mb-1
+                      div.text-center
+                        span.text-primary
+                          i.fa.fa-thumbs-up.fa-1x(aria-hidden='true')
+                          |  14
+                        |  &ensp;
+                        span.text-success
+                          i.fa.fa-commenting.fa-1x(aria-hidden='true')
+                          |  19
+                    .col-md-3.mb-1
+                      .align-items-center
+                        i.fa.fa-star.text-warning
+                        i.fa.fa-star.text-warning
+                        i.fa.fa-star.text-warning
+                        i.fa.fa-star.text-warning
+                        i.fa.fa-star.text-secondary
+                    .col-md-1
+                      a.btn.btn-success(href="profile?id="+user.email+"")  Profile
+

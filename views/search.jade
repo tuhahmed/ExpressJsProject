@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  .container 
+    .card.card-body.bg-light.row.text-center
+      form(action='/search', method='POST')
+        .form-floating.mb-3.mt-3
+          input#search.form-control(type='search', placeholder='Search...', name='search')
+          label(for='search') Search
+      h6 #{msg}
+    #posts-div.container.mt-1
+      table#dt2.table.dt(style='width:100%')
+        thead
+          tr
+            th(width='100%')
+        tbody
+          each issue in posts
+            tr
+              td
+                h4.post-text= issue.title
+                .form-floating.mt-3.mb-3
+                  textarea#issue._id.form-control.answer(name='answer', placeholder='')= issue.description

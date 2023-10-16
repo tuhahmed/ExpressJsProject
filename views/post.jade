@@ -1,0 +1,61 @@
+extends layout
+
+block content
+  #posts-div.container.mt-1
+      table#dt1.table.dt(style='width:100%')
+        thead
+          tr
+            th(width='100%')
+        tbody
+          each issue in posts
+            tr
+              td
+                .mt-5.bg-light.text-white.rounded
+                    .d-flex.justify-content-between.mb-3
+                      .p-2
+                        .text-dark
+                          a.navbar-brand(href='#')
+                            | 
+                            img.rounded-pill(src='images/user.png', alt='Logo', style='width:30px;')
+                            |  Tuha Ahmed
+                      .p-2
+                        .text-dark.text-right= issue.datecreated
+                    h4.post-text= issue.title
+                    .form-floating.mt-3.mb-3
+                      textarea#issue._id.form-control.answer(name='answer', placeholder='')= issue.description
+                    .post-row
+                      .activity-icons.text-dark
+                        div
+                          a(href='')
+                            img(src='https://i.postimg.cc/pLKNXrMq/like-blue.png')
+                          | 56
+                        div
+                          a(href="discussion?id="+issue.title)
+                            img(src='https://i.postimg.cc/rmjMymWv/comments.png')
+                          a#answers1x 5
+                      .pull-right
+                        a.btn.btn-sm.text-primary(onclick="UpdatePost("+issue._id+")") 
+                          i.fa.fa-pencil(aria-hidden='true')
+                        a.btn.btn-sm.text-danger(data-bs-toggle='modal', data-bs-target='#deleteModal')
+                          i.fa.fa-trash(aria-hidden='true')
+            script. 
+              function UpdatePost(e)
+              {
+                
+                var desc= $("'#"+e+"'").val();
+                alert(desc);
+                var isAuth=$.ajax({
+                    url: 'post/updatepost',
+                    type: 'Post',
+                    contentType: "application/json",
+                    data: {description: desc
+                    },
+                    success: function() {                      
+                        
+                    }
+                  });
+       
+              }
+
+                       
+   

@@ -1,0 +1,14 @@
+extends layout
+
+block content
+ main
+      .container-fluid.mt-3
+        .mt-4.p-5.bg-light.text-dark.rounded
+          h1 About 
+          - var x = 5;
+          div
+            ul
+              - for (var i=1; i<=x; i++) {
+                li Hello
+              - }
+          

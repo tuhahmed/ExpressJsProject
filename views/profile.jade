@@ -1,0 +1,121 @@
+extends layout
+
+block content
+  html
+  head
+  body
+    .row
+      .col-md-4.col-sm-12.mb-3
+        .card
+          .card-body
+            .d-flex.flex-column.align-items-center.text-center
+              form(action='/profile', method='post', enctype='multipart/form-data')           
+                input#photo(type='file', name='photo', hidden='hidden')
+              img.rounded-circle(src='/images/user.png', alt='', width='50', onclick='openWindow()')
+              .mt-3
+                h5 #{user.firstname + ' '+user.lastname}
+                p.text-secondary.mb-1 #{user.profession}
+                p.text-muted.font-size-sm #{user.address}
+                button.btn.btn-sm.btn-outline-primary Follow
+                button.btn.btn-sm.btn-outline-warning.ms-2 Message
+        .card.mt-3
+          ul.list-group.list-group-flush
+            li.list-group-item.d-flex.justify-content-between.align-items-center.flex-wrap
+              p.mb-0
+                i.fa.fa-globe(aria-hidden='true')
+                |  &emsp;Website
+              span.text-secondary #{user.website}
+            li.list-group-item.d-flex.justify-content-between.align-items-center.flex-wrap
+              p.mb-0
+                i.fa.fa-github(aria-hidden='true')
+                |  &emsp; Github
+              span.text-secondary #{user.github}
+            li.list-group-item.d-flex.justify-content-between.align-items-center.flex-wrap
+              p.mb-0
+                i.fa.fa-twitter(aria-hidden='true')
+                |  &emsp;Twitter
+              span.text-secondary #{user.twitter}
+            li.list-group-item.d-flex.justify-content-between.align-items-center.flex-wrap
+              p.mb-0
+                i.fa.fa-instagram(aria-hidden='true')
+                |  &emsp;Instagram
+              span.text-secondary #{user.instagram}
+            li.list-group-item.d-flex.justify-content-between.align-items-center.flex-wrap
+              p.mb-0
+                i.fa.fa-facebook(aria-hidden='true')
+                |  &emsp; Facebook
+              span.text-secondary #{user.facebook}
+      .col-md-8.col-sm-12
+        .card.mb-3
+          .card-body
+            .row.ms-2
+              .col-sm-3
+                h6.mb-0 Full Name
+              .col-sm-9.text-secondary
+                | #{user.firstname + ' ' + user.lastname}
+            hr.m-2
+            .row.ms-2
+              .col-sm-3
+                h6.mb-0 Email
+              .col-sm-9.text-secondary
+                | #{user.email}
+            hr.m-2
+            .row.ms-2
+              .col-sm-3
+                h6.mb-0 Phone
+              .col-sm-9.text-secondary
+                | #{user.phone}
+            hr.m-2
+            .row.ms-2
+              .col-sm-3
+                h6.mb-0 Mobile
+              .col-sm-9.text-secondary
+                | #{user.phone}
+            hr.m-2
+            .row.ms-2
+              .col-sm-3
+                h6.mb-0 Address
+              .col-sm-9.text-secondary
+                | #{user.address}
+            hr.m-2
+        .row
+          .col-md-6.col-sm-12.mb-3
+            .card.h-100
+              .card-body
+                h6.d-flex.align-items-center.mb-3 Project Status 
+                small Web Design
+                .progress.mb-3(style='height: 5px')
+                  .progress-bar.bg-success(role='progressbar', style='width: 90%', aria-valuenow='80', aria-valuemin='0', aria-valuemax='100')
+                small Website Markup
+                .progress.mb-3(style='height: 5px')
+                  .progress-bar.bg-warning(role='progressbar', style='width: 72%', aria-valuenow='72', aria-valuemin='0', aria-valuemax='100')
+                small One Page
+                .progress.mb-3(style='height: 5px')
+                  .progress-bar.bg-success(role='progressbar', style='width: 99%', aria-valuenow='89', aria-valuemin='0', aria-valuemax='100')
+                small Mobile Template
+                .progress.mb-3(style='height: 5px')
+                  .progress-bar.bg-warning(role='progressbar', style='width: 55%', aria-valuenow='55', aria-valuemin='0', aria-valuemax='100')
+                small Backend API
+                .progress.mb-3(style='height: 5px')
+                  .progress-bar.bg-primary(role='progressbar', style='width: 66%', aria-valuenow='66', aria-valuemin='0', aria-valuemax='100')
+          .col-sm-6.mb-3
+            .card.h-100
+              .card-body
+                h6.d-flex.align-items-center.mb-3 Project Status
+                small Java
+                .progress.mb-3(style='height: 5px')
+                  .progress-bar.bg-primary(role='progressbar', style='width: 80%', aria-valuenow='80', aria-valuemin='0', aria-valuemax='100')
+                small C#
+                .progress.mb-3(style='height: 5px')
+                  .progress-bar.bg-primary(role='progressbar', style='width: 72%', aria-valuenow='72', aria-valuemin='0', aria-valuemax='100')
+                small JavaScript
+                .progress.mb-3(style='height: 5px')
+                  .progress-bar.bg-primary(role='progressbar', style='width: 89%', aria-valuenow='89', aria-valuemin='0', aria-valuemax='100')
+                small NodeJs
+                .progress.mb-3(style='height: 5px')
+                  .progress-bar.bg-primary(role='progressbar', style='width: 55%', aria-valuenow='55', aria-valuemin='0', aria-valuemax='100')
+                small SQL Database
+                .progress.mb-3(style='height: 5px')
+                  .progress-bar.bg-primary(role='progressbar', style='width: 66%', aria-valuenow='66', aria-valuemin='0', aria-valuemax='100')
+
+          

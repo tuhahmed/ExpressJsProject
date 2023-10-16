@@ -1,0 +1,263 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    script.
+      document.getElementsByTagName("html")[0].className += " js";
+    link(rel='stylesheet', href='assets/css/style.css')
+    link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css', rel='stylesheet')
+    link(href='https://demo.adminkit.io/css/light.css', rel='stylesheet')
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+    link(href='https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css', rel='stylesheet')
+    link(href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css', rel='stylesheet')
+    link(href='https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap5.min.css', rel='stylesheet')
+    script(src='https://code.jquery.com/jquery-3.5.1.js')
+    script(src='https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js')
+    script(type='text/javascript', src='https://www.gstatic.com/charts/loader.js')
+    script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js')
+    script(src='https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js')
+    script(src='https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js')
+    script(src='https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/choices.js/1.1.6/choices.min.js')
+    title Hahu Tutorials
+  body
+    style.
+      .navbar {
+      margin-bottom: 0;
+      }
+      footer {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 20px;
+      margin: 0;
+      }
+      .bg-tma {
+      background-color: #542d1c;
+      }
+      .user-profile span {
+      font-size: 13px;
+      color: #9a9a9a;
+      }
+      .post-text {
+      color: #9a9a9a;
+      margin: 15px 0;
+      font-size: 15px;
+      }
+      .post-text span {
+      color: #626262;
+      font-weight: 500;
+      }
+      .post-text a {
+      color: #1876f2;
+      text-decoration: none;
+      }
+      .post-img {
+      width: 100%;
+      border-radius: 4px;
+      margin-bottom: 5px;
+      }
+      .post-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      }
+      .activity-icons div img {
+      width: 18px;
+      margin-right: 10px;
+      }
+      .activity-icons div {
+      display: inline-flex;
+      align-items: center;
+      margin-right: 30px;
+      }
+      .post-porfile-icon {
+      display: flex;
+      align-items: center;
+      }
+      .post-porfile-icon img {
+      width: 20px;
+      border-radius: 50%;
+      margin-right: 5px;
+      }
+      .post-row a {
+      color: #9a9a9a;
+      }
+      .search-field {
+      padding: 5;
+      margin-top: 7px;
+      height: 30px;
+      font-size: .75em;
+      border-radius: 16px;
+      width: 100%;
+      }
+      .mi {
+      margin-left: 0;
+      padding-left: 10px;
+      float: left;
+      }
+      .hidden {
+      display: none;
+      }
+      .unhidden {
+      display: block;
+      }
+      .mh {
+      height: 100vh;
+      }
+      .new-card {
+      margin: 0 auto;
+      display: -webkit-flex;
+      display: flex;
+      border-radius: 10px;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-flex-wrap: wrap;
+      flex-wrap: wrap;
+      margin-top: 15px;
+      padding: 1.5%;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box; */
+      box-sizing: border-box; */
+      box-shadow: 0 4px 10px rgba(0,0,0,0.16), 0 4px 10px rgba(0,0,0,0.23);
+      }
+    header.cd-main-header.js-cd-main-header
+      .cd-logo-wrapper
+        a.cd-logo(href='/index')
+          h3.text-light HAHሁ 
+      .cd-search.js-cd-search
+        form(action='/search', method='post')
+          input.reset(type='search', name='search', placeholder='Search...')
+      button.reset.cd-nav-trigger.js-cd-nav-trigger(aria-label='Toggle menu')
+        span
+      
+      input#il(type='hidden', name='isLogged', value='#{isLogged}')
+      ul.cd-nav__list.js-cd-nav__list
+        li#Auth.cd-nav__item.cd-nav__item--has-children.cd-nav__item--account.js-cd-item--has-children
+          a(href='./profile')
+            img(src='assets/img/cd-avatar.svg', alt='avatar')
+            span Account            
+          ul.cd-nav__sub-list
+            li.cd-nav__sub-item 
+              a(href='/profile') My Account
+            li.cd-nav__sub-item
+              a(href='logout') Logout
+        li#notAuth.cd-nav__item.cd-nav__item--has-children.cd-nav__item--account.js-cd-item--has-children
+          a(href='')
+            img(src='assets/img/cd-avatar.svg', alt='avatar')
+            span Login            
+          ul.cd-nav__sub-list
+            li.cd-nav__sub-item 
+              a(href='/login') Login
+            li.cd-nav__sub-item
+              a(href='signup') Sign up
+    // .cd-main-header
+    main.cd-main-content
+      nav.cd-side-nav.js-cd-side-nav
+        ul.cd-side__list.js-cd-side__list
+          li.cd-side__label
+            span Main
+          li.cd-side__item.cd-side__item--has-children.cd-side__item--overview.js-cd-item--has-children
+            a(href='./new') Issues         
+          li.cd-side__item.cd-side__item--has-children.cd-side__item--comments.js-cd-item--has-children
+            a(href='./post') Comments
+        ul.cd-side__list.js-cd-side__list
+          li.cd-side__label
+            span Secondarys
+          li.cd-side__item.cd-side__item--has-children.cd-side__item--users.js-cd-item--has-children
+            a(href='./users') Users
+        ul#admin.cd-side__list.js-cd-side__list(style='display:none;')
+          li.cd-side__label
+            span Administration         
+          li.cd-side__item.cd-side__item--has-children.cd-side__item--users.js-cd-item--has-children
+            a(href='./admin') Manage Users
+          li.cd-side__item.cd-side__item--has-children.cd-side__item--users.js-cd-item--has-children
+            a(href='./adminposts') Manage Posts
+          li.cd-side__item.cd-side__item--has-children.cd-side__item--users.js-cd-item--has-children
+            a(href='./adminanalytics') Admin Dashboard
+      .cd-content-wrapper
+        .text-component
+          block content
+      // .content-wrapper
+    // .cd-main-content
+    script(src='assets/js/util.js')
+    // util functions included in the CodyHouse framework
+    script(src='assets/js/menu-aim.js')
+    script(src='assets/js/main.js')
+    script.
+      $(document).ready(function() {
+        $("#info").show().delay(3000).queue(function(n) {
+          $(this).hide(); n();
+        });
+
+        var isAuth=$.ajax({
+                    url: '/index/isAuthenticated',
+                    type: 'GET',
+                    contentType: "application/json",
+                    data: {},
+                    success: function(data) {
+                        if(data.isAuthenticated)
+                        {
+                          $('#Auth').css('display', 'block');
+                          $('#notAuth').css('display', 'none');
+                        }
+                        else{
+                          $('#notAuth').css('display', 'block');
+                          $('#Auth').css('display', 'none');
+                        }
+                        if(data.isAdmin){
+                           $('#admin').css('display', 'block');
+                        }
+                        else {
+                           $('#admin').css('display', 'none');
+                        }
+                    }
+                  });
+       
+        $('.answer').summernote({
+        placeholder: 'What is your opinion?',
+        height: 20,
+        minHeight: 250,
+        focus: true,
+        toolbar:[]
+        });
+         $('.answera').summernote({
+        placeholder: 'What is your opinion?',
+        height: 100,
+        minHeight: 100,
+        focus: true,
+        toolbar:[]
+        });
+        $('.reply').summernote({
+        placeholder: 'What are the details of your problem?',
+        height: 150,
+        minHeight: 150,
+        airMode: false,
+        focus: true,toolbar:[]
+        });
+        $('.dt').DataTable({
+        "lengthChange": false
+        });
+         $('.dt2').DataTable({
+        "lengthChange": false,
+        "searching": false
+        });
+      });
+      function openWindow(){
+         $("#photo").click();         
+      }
+      function changePhoto(){
+         $("#upload").click();  
+      }
+      $("#reply1x").click(function() {
+      $("#replyx1").toggleClass("hidden unhidden");
+      });
+      $("#answers1x").click(function() {
+      $("#answerx1").toggleClass("hidden unhidden");
+      });
+      function loadData(e){
+        alert(e);
+      }
+    
+   
